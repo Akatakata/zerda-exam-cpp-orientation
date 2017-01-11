@@ -17,6 +17,10 @@ ArgumentHandler::ArgumentHandler(int _argc, char** _argv) {
   files->write_to_file(output_file.c_str(), crypting->get_changed_text());
 }
 
+ArgumentHandler::~ArgumentHandler() {
+  delete files;
+  delete crypting;
+}
 
 void ArgumentHandler::check_file_selector() {
   input_selector = argv[1];
@@ -56,6 +60,5 @@ void ArgumentHandler::check_number_of_args() {
     check_selectors();
   } else if (argc != 6 ) {
     cerr << "Error: the number of arguments is not correct." << endl;
-    cout << argc << endl;
   }
 }

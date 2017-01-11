@@ -22,7 +22,7 @@ private:
   string third_selector;
 public:
   ArgumentHandler(int _argc, char** _argv);
-
+  ~ArgumentHandler();
   void check_file_selector();
   void check_number_of_args();
   void check_selectors();
