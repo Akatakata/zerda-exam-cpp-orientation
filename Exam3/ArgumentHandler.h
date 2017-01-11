@@ -25,7 +25,7 @@ public:
 
   void check_file_selector();
   void check_number_of_args();
-  void check_second_selector();
+  void check_selectors();
 };
 
 #endif

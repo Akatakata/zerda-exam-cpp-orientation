@@ -21,18 +21,16 @@ void Decript::decripting(std::string text, int shift) {
     if (std::isalpha(text[i]) == false) {
       changed += text[i];
     } else {
-      tolower(text[i]);
       int loc = alphabet.find(text[i]);
       if (loc + shift > size) {
-        loc = loc + shift - size;
+        loc = loc + shift - size ;
       } else if (loc + shift < 0) {
         loc = size - loc + shift;
       }
       changed += alphabet[loc + shift];
     }
   }
- // repair_uppercase(text);
-  std::cout << changed;
+  repair_uppercase(text);
   set_changed_text(changed);
 }
 
@@ -45,6 +43,5 @@ void Decript::repair_uppercase(std::string text) {
 }
 
 std::string Decript::get_changed_text() {
-  std::cout << changed_text;
   return changed_text;
 }
