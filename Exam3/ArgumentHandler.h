@@ -3,6 +3,7 @@
 #define ARGUMENTHANDLER_H
 #include <string>
 #include "FileHandler.h"
+#include "Decript.h"
 
 using namespace std;
 
@@ -11,9 +12,12 @@ private:
   int argc;
   char** argv;
   FileHandler* files;
+  Decript* crypting;
   string input_selector;
   string shift_selector;
+  int shift_number;
   string output_selector;
+  string output_file;
   string second_selector;
   string third_selector;
 public:

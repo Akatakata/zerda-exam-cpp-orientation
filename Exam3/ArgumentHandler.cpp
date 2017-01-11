@@ -10,8 +10,11 @@ ArgumentHandler::ArgumentHandler(int _argc, char** _argv) {
   argv = _argv;
   check_number_of_args();
   files = new FileHandler;
+  crypting = new Decript;
   files->read_from_file(input_selector.c_str());
-  files->write_to_file("out.txt", files->get_content());
+  crypting->decripting(files->get_content(), 2);
+  std::cout << crypting->get_changed_text() << std::endl;
+ // files->write_to_file("out.txt", crypting->get_changed_text());
 }
 
 
@@ -50,7 +53,7 @@ void ArgumentHandler::check_number_of_args() {
     check_file_selector();
     check_second_selector();
   } else if (argc != 6 ) {
-    cerr << "error" << endl;
+    cerr << "Error: the number of arguments is not correct." << endl;
     cout << argc << endl;
   }
 }
