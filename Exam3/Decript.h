@@ -8,9 +8,10 @@ private:
 public:
   Decript();
   ~Decript();
-  void shift_letters(std::string text, int shift);
+  void set_changed_text(std::string text);
   void repair_uppercase(std::string text);
-  std::string decripting(std::string text, int shift);
+  void decripting(std::string text, int shift);
   std::string get_changed_text();
+
 };
 #endif
